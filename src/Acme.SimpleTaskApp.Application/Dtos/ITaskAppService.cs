@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 //using Task = Acme.SimpleTaskApp.Tasks.Task;
 
-namespace Acme.SimpleTaskApp.Tasks
+namespace Acme.SimpleTaskApp.Dtos
 {
     public interface ITaskAppService : IApplicationService
     {
@@ -22,7 +22,7 @@ namespace Acme.SimpleTaskApp.Tasks
         public TaskState? State { get; set; }
     }
 
-    [AutoMapFrom(typeof(Task))]
+    [AutoMapFrom(typeof(Tasks.Task))]
     public class TaskListDto : EntityDto, IHasCreationTime
     {
         public string Title { get; set; }

@@ -8,13 +8,13 @@ using Abp.Linq.Extensions;
 //using Acme.SimpleTaskApp.Tasks.Dtos;
 using Microsoft.EntityFrameworkCore;
 
-namespace Acme.SimpleTaskApp.Tasks
+namespace Acme.SimpleTaskApp.Dtos
 {
     public class TaskAppService : SimpleTaskAppAppServiceBase, ITaskAppService
     {
-        private readonly IRepository<Task> _taskRepository;
+        private readonly IRepository<Tasks.Task> _taskRepository;
 
-        public TaskAppService(IRepository<Task> taskRepository)
+        public TaskAppService(IRepository<Tasks.Task> taskRepository)
         {
             _taskRepository = taskRepository;
         }

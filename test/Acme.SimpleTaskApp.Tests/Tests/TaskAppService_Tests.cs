@@ -1,6 +1,8 @@
 ﻿using Acme.SimpleTaskApp.Tasks;
+using Acme.SimpleTaskApp.Dtos;
 using Shouldly;
 using Xunit;
+using System.Linq;
 
 namespace Acme.SimpleTaskApp.Tests
 {
@@ -21,6 +23,7 @@ namespace Acme.SimpleTaskApp.Tests
 
             //Assert
             output.Items.Count.ShouldBe(2);
+            output.Items.Count(t => t.AssignedPersonName != null).ShouldBe(1);
         }
 
         [Fact]

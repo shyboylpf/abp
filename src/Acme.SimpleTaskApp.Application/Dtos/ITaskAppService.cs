@@ -5,6 +5,7 @@ using Abp.Domain.Entities.Auditing;
 using Acme.SimpleTaskApp.Tasks;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,19 @@ namespace Acme.SimpleTaskApp.Dtos
         public TaskState? State { get; set; }
     }
 
+    [AutoMapTo(typeof(Tasks.Task))]
+    public class CreateTaskInput
+    {
+        [Required]
+        [StringLength(Tasks.Task.MaxTitleLength)]
+        public string Title { get; set; }
+
+        [StringLength(Tasks.Task.MaxDescriptionLength)]
+        public string Description { get; set; }
+
+        public Guid? AssignedPersonId { get; set; }
+    }
+
     [AutoMapFrom(typeof(Tasks.Task))]
     public class TaskListDto : EntityDto, IHasCreationTime
     {
@@ -29,5 +43,8 @@ namespace Acme.SimpleTaskApp.Dtos
         public string Description { get; set; }
         public DateTime CreationTime { get; set; }
         public TaskState State { get; set; }
+        public Guid? AssignedPersonId { get; set; }
+
+        public string AssignedPersonName { get; set; }
     }
 }

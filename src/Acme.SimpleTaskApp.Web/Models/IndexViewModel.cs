@@ -1,6 +1,6 @@
 ﻿using Abp.Localization;
-using Acme.SimpleTaskApp.Dtos;
 using Acme.SimpleTaskApp.Tasks;
+using Acme.SimpleTaskApp.Tasks.Dto;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;

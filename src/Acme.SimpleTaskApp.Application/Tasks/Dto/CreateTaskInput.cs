@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Abp.AutoMapper;
 
-namespace Acme.SimpleTaskApp.Tasks.Dtos
+namespace Acme.SimpleTaskApp.Tasks.Dto
 {
     [AutoMapTo(typeof(Task))]
     public class CreateTaskInput
